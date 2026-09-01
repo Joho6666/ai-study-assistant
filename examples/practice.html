@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>练习页 · AI 学习辅助</title>
+    <style>
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        max-width: 720px;
+        margin: 32px auto;
+        padding: 0 16px 48px;
+        color: #0f172a;
+        background: #f8fafc;
+      }
+      h1 { font-size: 22px; }
+      .hint {
+        background: #ecfdf5;
+        border: 1px solid #99f6e4;
+        color: #115e59;
+        padding: 12px 14px;
+        border-radius: 12px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      form {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 18px 20px;
+        margin-top: 16px;
+      }
+      fieldset {
+        border: 0;
+        margin: 0 0 22px;
+        padding: 0;
+      }
+      legend {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      label { display: block; margin: 8px 0; }
+      input[type="text"] {
+        width: 100%;
+        max-width: 360px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+      }
+      button[type="submit"] {
+        background: #0f766e;
+        color: #fff;
+        border: 0;
+        border-radius: 10px;
+        padding: 8px 14px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>公开练习题（自学核对）</h1>
+    <p class="hint">
+      这是扩展自带的练习页，不是考试系统。选中一题文字，按 Alt+Shift+A 或右键「解析选中题目」。
+      侧边栏给出建议后，点「填入建议」才会改选项。本页提交按钮只在本地提示，不会把答案送到任何服务器。
+    </p>
+    <form id="quiz" action="#" method="get">
+      <fieldset>
+        <legend>1. HTTP 默认端口是？</legend>
+        <label><input type="radio" name="q1" value="A" /> A. 21</label>
+        <label><input type="radio" name="q1" value="B" /> B. 80</label>
+        <label><input type="radio" name="q1" value="C" /> C. 443</label>
+        <label><input type="radio" name="q1" value="D" /> D. 3306</label>
+      </fieldset>
+      <fieldset>
+        <legend>2. 下列哪些是 JavaScript 基本类型？（多选）</legend>
+        <label><input type="checkbox" name="q2" value="A" /> A. string</label>
+        <label><input type="checkbox" name="q2" value="B" /> B. number</label>
+        <label><input type="checkbox" name="q2" value="C" /> C. object</label>
+        <label><input type="checkbox" name="q2" value="D" /> D. boolean</label>
+      </fieldset>
+      <fieldset>
+        <legend>3. 判断：HTTPS 默认使用 443 端口。</legend>
+        <label><input type="radio" name="q3" value="对" /> 对</label>
+        <label><input type="radio" name="q3" value="错" /> 错</label>
+      </fieldset>
+      <fieldset>
+        <legend>4. CSS 盒子模型中，content + padding + border 对应的常用 box-sizing 值是？</legend>
+        <label>答案：<input type="text" name="q4" autocomplete="off" /></label>
+      </fieldset>
+      <button type="submit">核对本页（不会外传）</button>
+      <p id="local" style="color:#64748b;font-size:13px;"></p>
+    </form>
+    <script>
+      document.getElementById("quiz").addEventListener("submit", (event) => {
+        event.preventDefault();
+        document.getElementById("local").textContent =
+          "已拦截提交：这只是本地练习页，请自己对照解析。扩展也不会替你交卷。";
+      });
+    </script>
+  </body>
+</html>

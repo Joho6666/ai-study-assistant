@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>学习辅助 · 选项</title>
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      body { max-width: 560px; margin: 0 auto; padding: 28px 16px; }
+    </style>
+  </head>
+  <body>
+    <h1>接口设置</h1>
+    <p class="sub">填写你自己的 OpenAI 兼容接口。Key 只保存在本机 chrome.storage.local，不会写入网页，也不会进 git。</p>
+    <div id="status" class="banner ok" hidden></div>
+    <div class="card">
+      <label for="apiBase">API Base URL</label>
+      <input id="apiBase" placeholder="https://api.deepseek.com/v1" />
+      <p class="sub">也可填 OpenAI、硅基流动或本地网关，例如 http://127.0.0.1:8000/v1</p>
+      <label for="model">模型名</label>
+      <input id="model" placeholder="deepseek-chat" />
+      <label for="apiKey">API Key</label>
+      <input id="apiKey" type="password" autocomplete="off" placeholder="sk-…" />
+      <div class="row">
+        <button id="save" class="primary" type="button">保存</button>
+        <button id="toggle" class="ghost" type="button">显示 Key</button>
+      </div>
+    </div>
+    <p class="sub">本扩展只做练习辅助：解析选中题目，确认后才填入，从不提交表单。不要用于正式考试或监考环境。</p>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

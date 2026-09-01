@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 学习辅助</title>
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <h1>练习题解析</h1>
+    <p class="sub">框选题目后点解析。建议答案需要你确认才会填入页面，插件不会提交表单。</p>
+    <div id="status" class="banner warn">尚未解析。可在页面选中题目，或把题干预到下面。</div>
+    <div class="card">
+      <label for="question">题干</label>
+      <textarea id="question" placeholder="在网页里选中题目，或把练习题粘贴到这里"></textarea>
+      <div class="row">
+        <button id="read" class="ghost" type="button">读取选中内容</button>
+        <button id="analyze" class="primary" type="button">解析</button>
+      </div>
+    </div>
+    <div class="card" id="result-card" hidden>
+      <div class="meta" id="meta"></div>
+      <div class="answer" id="answer"></div>
+      <pre id="explanation"></pre>
+      <div class="row">
+        <button id="fill" class="primary" type="button">填入建议</button>
+        <button id="copy" class="ghost" type="button">复制答案</button>
+      </div>
+    </div>
+    <p class="sub">API Key 在「<a href="options.html" target="_blank">扩展选项</a>」里配置。请只用于练习页，不要用于正式考试。</p>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
